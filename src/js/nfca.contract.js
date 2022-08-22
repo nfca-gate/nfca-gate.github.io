@@ -1,4 +1,4 @@
-var jsGatewayVersion = "0.2.3"
+var jsGatewayVersion = "0.2.5"
 
 var jsNetData = {
   "networks" : [
@@ -9,10 +9,24 @@ var jsNetData = {
                           "chain"     : "137",
                           "name"      : "Polygon Mainnet",
                           "symbol"    : "MATIC",
-                          "provider"  : "https://speedy-nodes-nyc.moralis.io/ccd4141adcf361f630c9ce17/polygon/mainnet",
+                          "provider"  : "https://polygon-rpc.com",
                           "rpc"       : "https://polygon-rpc.com",
                           "scan"      : "https://polygonscan.com",
-                          "contract"  : ""
+                          "contract"  : "0x9e1D3640B4e84B35A4e78608776b6623EBc50d93"
+                      }
+                  ]
+      },
+      {
+          "id": 80001,
+          "netdata": [
+                      {
+                          "chain"     : "80001",
+                          "name"      : "Polygon Testnet",
+                          "symbol"    : "MATIC",
+                          "provider"  : "https://matic-mumbai.chainstacklabs.com",
+                          "rpc"       : "https://matic-mumbai.chainstacklabs.com",
+                          "scan"      : "https://mumbai.polygonscan.com",
+                          "contract"  : "0x320907fF965F6240D28d98683f5b84b39De7122c"
                       }
                   ]
       },
@@ -26,7 +40,7 @@ var jsNetData = {
                           "provider"  : "https://rpc.testnet.fantom.network",
                           "rpc"       : "https://rpc.testnet.fantom.network",
                           "scan"      : "https://testnet.ftmscan.com",
-                          "contract"  : "0xBBc90A420bBe5E216f1c1737962b793E89A6b03e"
+                          "contract"  : "0x2d3e15224725e6993a5395cb80026a42a84b6e62"
                       }
                   ] 
       }
@@ -407,6 +421,11 @@ var jsABI = [
 			},
 			{
 				"internalType": "uint256",
+				"name": "_CIDMax",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
 				"name": "_KMax",
 				"type": "uint256"
 			},
@@ -524,19 +543,6 @@ var jsABI = [
 			}
 		],
 		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -676,6 +682,19 @@ var jsABI = [
 	},
 	{
 		"inputs": [],
+		"name": "CIDMax",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "DMax",
 		"outputs": [
 			{
@@ -802,6 +821,30 @@ var jsABI = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "OwnerIndexes",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
